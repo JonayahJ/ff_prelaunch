@@ -1,0 +1,39 @@
+.experts {
+    background: #fafbfb;
+    padding: 10rem 0;
+
+    &__header {
+        font-size: 3.5rem;
+        text-align: center;
+    }
+
+    &__headshot {
+        background-color: rgba($slate-gray, $alpha: 1.0);
+        padding: 2rem;
+        text-align: center;
+        color: $color-black;
+    }
+
+    &__name {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    &__link {
+        text-align: center;
+        font-weight: 500;
+    }
+
+    &__companies {
+        text-align: center;
+    }
+}
+
+a {
+    color: $keppel;
+    text-decoration: none;
+
+    &:hover {
+        color: $steel-blue;
+    }
+}

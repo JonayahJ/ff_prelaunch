@@ -1,0 +1,21 @@
+.journey {
+    background: #fafbfb;
+    padding: 10rem 0;
+
+    &-step {
+        text-align: center;
+    }
+
+    &__header {
+        font-size: 3.5rem;
+        text-align: center;
+    }
+
+    &__subtitle {
+        color: $steel-blue;
+    }
+
+    &__icon {
+        color: $keppel;
+    }
+}

@@ -1,0 +1,63 @@
+.navbar {
+    background: $iceberg;
+    height: 10rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem calc((100vw - 1200px) /2);
+    z-index: 10;
+    position: relative;
+
+    &__logo {
+        color: $color-white;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 3rem;
+        margin-left: 2rem;
+    }
+
+    &-toggler {
+        color: $color-white;
+        box-shadow: .15s ease-in-out;
+    }
+
+    &-collapse {
+        background-color: $iceberg;
+        // margin-bottom: 3rem;
+    }
+
+    &-nav {
+        list-style: none;
+        text-align: center;
+        margin-right: 2.5rem;
+
+        #button {
+            padding: 1.2rem 3rem;
+            border: none;
+            outline: none;
+            border-radius: 0.5rem;
+            background: $keppel;
+            margin-left: 2rem;
+            color: $color-white;
+
+            &:hover {
+                background: $light-cornflower-blue;
+                transition: all 0.3s ease;
+            }
+        }
+    }
+    
+    .nav {
+        &-link {
+            color: $color-white;
+            font-size: 1.8rem;
+            justify-content: center;
+            text-decoration: none;
+            padding: $nav-link-padding-x;
+
+            &:hover {
+                color: $keppel;
+                transition: all 0.3s ease;
+            }
+        }
+    }
+}

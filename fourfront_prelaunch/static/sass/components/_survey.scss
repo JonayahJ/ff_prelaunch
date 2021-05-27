@@ -1,0 +1,81 @@
+.question {
+    padding: 10rem 0;
+
+    &__text {
+        font-size: 3rem;
+    }
+
+    &__subtext {
+        font-size: 2.8rem;
+        font-weight: 300;
+    }
+
+    .offset {
+        padding-left: 5rem;
+    }
+
+    .form-check-input {
+        text-align: left;
+        font-size: 3.5rem;
+        font-weight: 300;        
+    }
+
+    .multiple-choice {
+        border-color: $keppel;
+        font-size: 3rem;
+    }
+
+    .inline-other {
+        border-color: $keppel;
+        font-size: 2rem;
+    }
+
+    .input {
+        padding-left: 1.2rem;
+        border: 1px solid $keppel;
+        border-radius: 0.5rem;
+        text-align: left;
+        font-size: 2rem;
+        font-weight: 300;
+    }
+
+    label {
+        font-size: 2.5rem;
+    }
+
+    span {
+        font-weight: lighter;
+    }
+
+    .mini-text {
+        font-size: 1.6rem;
+        font-weight: lighter;
+        text-align: center;
+        margin-right: 2rem;
+    }
+
+    .button {
+        padding: 2rem 5rem;
+        border: none;
+        border-radius: 0.5rem;
+        background: $keppel;
+        color: $color-white;
+        font-size: 1.5rem;
+        align-items: center;
+
+        &:hover {
+            background: $light-cornflower-blue;
+            transition: all 0.3s ease;
+        }
+    }
+}
+
+.thank-you {
+    padding: 10rem 0;
+
+    h1 {
+        font-size: 4rem;
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+}
