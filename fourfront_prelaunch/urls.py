@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views
+from .views import LandingPageView, SurveyPageView
 
 urlpatterns = [
-    path("<str:page>", views.dynamic_pages)
+    path("", LandingPageView.as_view(), name="home"),
+    path("survey", SurveyPageView.as_view(), name="survey"),
 ]
