@@ -1,0 +1,49 @@
+.benefits {
+    background: #fafbfb;
+    padding: 10rem 0;
+
+    &__header {
+        font-size: 3.5rem;
+        text-align: center;
+    }
+
+    &__title {
+        font-size: 3rem;
+    }
+
+    &__subtitle {
+        font-size: 2.5rem;
+        font-weight: 500;
+    }
+
+    &__icon {
+        color: $keppel;
+    }
+
+    &-box {
+        background-color: rgba($color: #eee, $alpha: .8);
+        padding: 2.5rem;
+        border-radius: 3px;
+        box-shadow: 0 1.5rem 2rem rgba($color-black, .15);
+        transition: transform .3s;
+
+        &:hover {
+            transform: translateY(-1.5rem) scale(1.03);
+        }
+    }
+
+    #button {
+        padding: 1.2rem 2.4rem;
+        border: none;
+        outline: none;
+        border-radius: 0.5rem;
+        background: $light-cornflower-blue;
+        color: $color-white;
+        text-decoration: none;
+
+        &:hover {
+            background: $steel-blue;
+            transition: all 0.3s ease;
+        }
+    }
+}

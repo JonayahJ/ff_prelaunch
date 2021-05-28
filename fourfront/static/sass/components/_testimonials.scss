@@ -1,0 +1,51 @@
+.testimonials {
+  padding: 10rem 0;
+
+  &__header {
+    font-size: 3.5rem;
+    text-align: right;
+  }
+
+  &__text {
+    font-size: 2rem;
+    text-align: right;
+    padding-bottom: 2rem;
+  }
+
+  &__name {
+    text-align: right;
+    padding-top: 2.5rem;
+  }
+
+  &__company {
+    font-size: 1.5rem;
+    font-weight: lighter;
+    text-align: right;
+  }
+
+  &__icon {
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+
+  &__chevrons {
+    color: $cadet-blue-crayola;
+  }
+    
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

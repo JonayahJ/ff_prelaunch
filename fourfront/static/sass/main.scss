@@ -1,0 +1,29 @@
+// Abstract
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+// Base
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+// Components
+@import "components/navbar";
+@import "components/journey";
+@import "components/testimonials";
+@import "components/solutions";
+@import "components/benefits";
+@import "components/experts";
+@import "components/faq";
+@import "components/subscribe";
+@import "components/survey";
+
+// Layout
+@import "layout/grid";
+@import "layout/header";
+@import "layout/footer";
+
+// Pages
+@import "pages/home";

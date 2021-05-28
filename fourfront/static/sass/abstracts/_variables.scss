@@ -1,0 +1,86 @@
+/* 
+CSS HEX
+--keppel: #3ec4b0ff;
+--steel-blue: #3d7fc1ff;
+--iceberg: #72acddff;
+--light-cornflower-blue: #9ccdefff;
+--cadet-blue-crayola: #a6b0bcff;
+--light-slate-gray: #838f9bff;
+--slate-gray: #677384ff;
+
+CSS HSL 
+--keppel: hsla(171, 53%, 51%, 1);
+--steel-blue: hsla(210, 52%, 50%, 1);
+--iceberg: hsla(207, 61%, 66%, 1);
+--light-cornflower-blue: hsla(205, 72%, 77%, 1);
+--cadet-blue-crayola: hsla(213, 14%, 69%, 1);
+--light-slate-gray: hsla(210, 11%, 56%, 1);
+--slate-gray: hsla(215, 12%, 46%, 1);
+*/
+
+/* SCSS HEX */
+$keppel: #3ec4b0ff;
+$steel-blue: #3d7fc1ff;
+$iceberg: #72acddff;
+$light-cornflower-blue: #9ccdefff;
+$cadet-blue-crayola: #a6b0bcff;
+$light-slate-gray: #838f9bff;
+$slate-gray: #677384ff;
+
+/* SCSS HSL */
+$keppel: hsla(171, 53%, 51%, 1);
+$steel-blue: hsla(210, 52%, 50%, 1);
+$iceberg: hsla(207, 61%, 66%, 1);
+$light-cornflower-blue: hsla(205, 72%, 77%, 1);
+$cadet-blue-crayola: hsla(213, 14%, 69%, 1);
+$light-slate-gray: hsla(210, 11%, 56%, 1);
+$slate-gray: hsla(215, 12%, 46%, 1);
+
+/* SCSS RGB */
+$keppel: rgba(62, 196, 176, 1);
+$steel-blue: rgba(61, 127, 193, 1);
+$iceberg: rgba(114, 172, 221, 1);
+$light-cornflower-blue: rgba(156, 205, 239, 1);
+$cadet-blue-crayola: rgba(166, 176, 188, 1);
+$light-slate-gray: rgba(131, 143, 155, 1);
+$slate-gray: rgba(103, 115, 132, 1);
+
+// Additional Colors
+$color-grey-light: rgb(247, 247, 247);
+$color-grey-medium: rgb(135, 135, 135);
+$color-grey-dark: rgb(64, 64, 64);
+$color-white: rgb(255, 255, 255);
+$color-black: rgb(0, 0, 0);
+
+/* SCSS Gradient */
+$gradient-top: linear-gradient(0deg, #3ec4b0ff, #3d7fc1ff, #72acddff, #9ccdefff, #a6b0bcff, #838f9bff, #677384ff);
+$gradient-right: linear-gradient(90deg, #3ec4b0ff, #3d7fc1ff, #72acddff, #9ccdefff, #a6b0bcff, #838f9bff, #677384ff);
+$gradient-bottom: linear-gradient(180deg, #3ec4b0ff, #3d7fc1ff, #72acddff, #9ccdefff, #a6b0bcff, #838f9bff, #677384ff);
+$gradient-left: linear-gradient(270deg, #3ec4b0ff, #3d7fc1ff, #72acddff, #9ccdefff, #a6b0bcff, #838f9bff, #677384ff);
+$gradient-top-right: linear-gradient(45deg, #3ec4b0ff, #3d7fc1ff, #72acddff, #9ccdefff, #a6b0bcff, #838f9bff, #677384ff);
+$gradient-bottom-right: linear-gradient(135deg, #3ec4b0ff, #3d7fc1ff, #72acddff, #9ccdefff, #a6b0bcff, #838f9bff, #677384ff);
+$gradient-top-left: linear-gradient(225deg, #3ec4b0ff, #3d7fc1ff, #72acddff, #9ccdefff, #a6b0bcff, #838f9bff, #677384ff);
+$gradient-bottom-left: linear-gradient(315deg, #3ec4b0ff, #3d7fc1ff, #72acddff, #9ccdefff, #a6b0bcff, #838f9bff, #677384ff);
+$gradient-radial: radial-gradient(#3ec4b0ff, #3d7fc1ff, #72acddff, #9ccdefff, #a6b0bcff, #838f9bff, #677384ff);
+
+// FONT
+$default-font-size: 1.6rem;
+
+// GRID
+$grid-width: 114rem;
+$gutter-vertical: 4rem;
+$gutter-vertical-small: 2rem;
+$gutter-horizontal: 2rem;
+
+// NAV
+$nav-link-padding-x: 1.5rem;
+$navbar-nav-link-padding-x: .5rem;
+
+// Bootstrap container widths
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);

@@ -1,4 +1,11 @@
 {% extends "base.html" %}
+{% comment %} {% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "/css/styles.css" %}" />
+{% endblock %} {% endcomment %}
+
+{% block title %}Home{% endblock %}
 
 {% block links %}
     <a href="#journey" class="nav-link">Journey</a>
@@ -8,8 +15,6 @@
     <a href="#experts" class="nav-link">Experts</a>
     <a href="#faq" class="nav-link">FAQ</a>
 {% endblock %}
-
-{% block title %}Home{% endblock %}
 
 {% block content %}
     <!-- Header Section -->

@@ -1,0 +1,33 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;  // 1rem = 10px
+    overflow-x: hidden; // removing white right
+
+    @include respond(big-desktop){ // >1800px
+        font-size: 75%;
+    }
+    @include respond(tab-land){ // 1200px
+        font-size: 60%;
+    }
+    @include respond(tab-port){ // 900px
+        font-size: 55%;
+    }
+    @include respond(phone){ // 600px
+        font-size: 40%;
+        // need to stack columns
+    }
+
+}
+
+body {
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+    line-height: 1.7;
+}

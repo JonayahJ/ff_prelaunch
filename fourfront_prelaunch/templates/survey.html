@@ -10,694 +10,173 @@
     <!-- Main -->
     <main>
         <section class="question">
-            <form action="" method="POST">
-                <!-- { % csrf_token % } -->
+            <form role="form">
+                {% csrf_token %}
                 <!-- Q1 -->
                 <div class="row">
-                    <div class="question__text">
+                    <div class="question_text">
                         Q1. Are you a startup Founder or Co-Founder with no prior technology experience?
                     </div>
                 </div>
-                <!-- Actual Question -->
                 <div class="row g-3">
-                    <div class="col-1-of-3 offset">
-                        <div class="form-check form-check-inline">
-                            <input 
-                                class="form-check-input multiple-choice " 
-                                type="radio" 
-                                name="inlineRadioOptions" 
-                                id="inlineRadio1" 
-                                value="option1">
-                            <label 
-                            class="form-check-label" 
-                            for="inlineRadio1">
-                                Yes
-                            </label>
-                        </div>
-                    </div>  
-                    <div class="col-1-of-3 offset">
-                        <div class="form-check form-check-inline">
-                            <input 
-                                class="form-check-input multiple-choice" 
-                                type="radio" 
-                                name="inlineRadioOptions" 
-                                id="inlineRadio2" 
-                                value="option2">
-                            <label 
-                                class="form-check-label" 
-                                for="inlineRadio2">
-                                No
-                            </label>
-                        </div>
-                    </div>  
-                    <div class="col-1-of-3 offset">
-                        <div class="form-check form-check-inline">
-                        <input 
-                            class="form-check-input multiple-choice" 
-                            type="radio" 
-                            name="inlineRadioOptions" 
-                            id="inlineRadio3" 
-                            value="option3">
-                            
-                        <label 
-                            class="form-check-label" 
-                            for="inlineRadio3">
-                            Other <span>(please specify)</span>
-                        </label>
-                        <input 
-                            type="text" 
-                            name="other" 
-                            class="form-control inline-other" 
-                            aria-label="Text input with radio button">
-                        </div>
-                    </div>
+                    <input type="radio" id="tech_exp_yes" name="tech_exp" value="yes">
+                    <label for="yes">Yes</label>
+                    <input type="radio" id="tech_exp_no" name="tech_exp" value="no">
+                    <label for="no">No</label>
+                    <input type="radio" id="tech_exp_other" name="tech_exp" value="other">
+                    <label for="other">Other</label><br>
+                    <input type="text" id="tech_exp_other_explain" name="tech_exp_text">
+                    <label for="tech_exp_other_explain">Please specify</label>
                 </div>
                 <br>
                 <!-- Q2 -->
                 <div class="row">
-                    <div class="question__text">
+                    <div class="question_text">
                         Q2: Do you have a technical founder or a full-time CTO?
                     </div>
                 </div>
-                <!-- Actual Question -->
                 <div class="row g-3">
-                    <div class="col-1-of-3 offset">
-                        <div class="form-check form-check-inline">
-                            <input 
-                                class="form-check-input multiple-choice" 
-                                type="radio" 
-                                name="inlineRadioOptions" 
-                                id="inlineRadio1" 
-                                value="option1">
-                            <label 
-                            class="form-check-label" 
-                            for="inlineRadio1">
-                                Yes
-                            </label>
-                        </div>
-                    </div>  
-                    <div class="col-1-of-3 offset">
-                        <div class="form-check form-check-inline">
-                            <input 
-                                class="form-check-input multiple-choice" 
-                                type="radio" 
-                                name="inlineRadioOptions" 
-                                id="inlineRadio2" 
-                                value="option2">
-                            <label 
-                                class="form-check-label" 
-                                for="inlineRadio2">
-                                No
-                            </label>
-                        </div>
-                    </div>  
-                    <div class="col-1-of-3 offset">
-                        <div class="form-check form-check-inline">
-                        <input 
-                            class="form-check-input multiple-choice" 
-                            type="radio" 
-                            name="inlineRadioOptions" 
-                            id="inlineRadio3" 
-                            value="option3">
-                            
-                        <label 
-                            class="form-check-label" 
-                            for="inlineRadio3">
-                            Other <span>(please specify)</span>
-                        </label>
-                        <input 
-                            type="text" 
-                            name="other" 
-                            class="form-control inline-other" 
-                            aria-label="Text input with radio button">
-                        </div>
-                    </div>
+                    <input type="radio" id="tech_founder_yes" name="tech_founder" value="yes">
+                    <label for="yes">Yes</label>
+                    <input type="radio" id="tech_founder_no" name="tech_founder" value="no">
+                    <label for="no">No</label>
+                    <input type="radio" id="tech_founder_other" name="tech_founder" value="other">
+                    <label for="other">Other</label><br>
+                    <input type="text" id="tech_founder_other_explain" name="tech_founder_text">
+                    <label for="tech_founder_other_explain">Please specify</label>
                 </div>
                 <br>
                 <!-- Q3 -->
                 <div class="row">
-                    <div class="question__text">
+                    <div class="question_text">
                         Q3: What is your startup stage?
                     </div>
                 </div>
-                <!-- Actual Question -->
                 <div class="row g-3">
-                    <div class="col-1-of-2 offset">
-                        <!-- Left -->
-                        <div class="form-check">
-                            <input 
-                                class="form-check-input multiple-choice" 
-                                type="radio" 
-                                name="option" 
-                                id="option1" 
-                                value="option1">
-                            <label 
-                                class="form-check-label" 
-                                for="option1">
-                                Have an idea, no proof of concept
-                            </label>
-                        </div>
-                        <br>
-                        <div class="form-check">
-                            <input 
-                                class="form-check-input multiple-choice" 
-                                type="radio" 
-                                name="option" 
-                                id="option2" 
-                                value="option2">
-                            <label 
-                                class="form-check-label" 
-                                for="option2">
-                                Pre-Revenue
-                            </label>
-                        </div>
-                        <br>
-                        <div class="form-check">
-                            <input 
-                                class="form-check-input multiple-choice" 
-                                type="radio" 
-                                name="option" 
-                                id="option3" 
-                                value="option3">
-                            <label 
-                                class="form-check-label" 
-                                for="option3">
-                                Other <span>(please specify)</span>
-                            </label>
-                            <input 
-                                type="text" 
-                                name="other" 
-                                class="form-control inline-other" 
-                                aria-label="Text input with radio button">
-                        </div>
-                    </div>  
-                    <div class="col-1-of-2 offset">
-                        <!-- Right -->
-                        <div class="form-check">
-                            <input 
-                                class="form-check-input multiple-choice" 
-                                type="radio" 
-                                name="option" 
-                                id="option1" 
-                                value="option1" >
-                            <label 
-                                class="form-check-label" 
-                                for="option1">
-                                Done proof of concept, not validated
-                            </label>
-                        </div>
-                        <br>
-                        <div class="form-check">
-                            <input 
-                                class="form-check-input multiple-choice" 
-                                type="radio" 
-                                name="option" 
-                                id="option2" 
-                                value="option2">
-                            <label 
-                                class="form-check-label" 
-                                for="option2">
-                                Revenue
-                            </label>
-                        </div>
-                        <br>
-                        <div class="form-check">
-                            <input 
-                                class="form-check-input multiple-choice" 
-                                type="radio" 
-                                name="option" 
-                                id="option3" 
-                                value="option3">
-                            <label 
-                                class="form-check-label" 
-                                for="option3">
-                                Validated and committed
-                            </label>
-                        </div>
-                    </div>  
+                    <input type="radio" id="startup_stage_no-proof" name="startup_stage" value="no-proof">
+                    <label for="no-proof">Have an idea, no proof of concept</label>
+                    <input type="radio" id="startup_stage_proof" name="startup_stage" value="proof">
+                    <label for="proof">Done proof of concept, not validated</label>
+                    <input type="radio" id="startup_stage_pre-rev" name="startup_stage" value="pre-rev">
+                    <label for="pre-rev">Pre-Revenue</label>
+                    <input type="radio" id="startup_stage_rev" name="startup_stage" value="rev">
+                    <label for="rev">Revenue</label>
+                    <input type="radio" id="startup_stage_val-comm" name="startup_stage" value="val-comm">
+                    <label for="val-comm">Validated and committed</label>
+                    <input type="radio" id="startup_stage_other" name="startup_stage" value="other">
+                    <label for="other">Other</label><br>
+                    <input type="text" id="startup_stage_other_explain" name="startup_stage_text">
+                    <label for="startup_stage_other_explain">Please specify</label>
                 </div>
                 <br>
-                <br>
                 <!-- Q4 -->
-                <div class="row g-3">
-                    <div class="question__text">
+                <div class="row">
+                    <div class="question_text">
                         Q4: Briefly describe your business. What is the problem you’re trying to solve? Who is your customer? And how are you solving their problem?
                     </div>
                 </div>
-                <!-- Actual Question -->
                 <div class="row g-3">
-                    <div class="mb-3">
-                        <textarea 
-                            class="form-control input" 
-                            id="open-ended-response1" 
-                            rows="8">
-                        </textarea>
-                    </div>
+                    <textarea id="startup_description" name="startup_description" rows="8"></textarea>
                 </div>
                 <br>
                 <!-- Q5 -->
                 <div class="row">
-                    <div class="question__text">
-                        Q5: How often do you wish you had access to a real world expert to give quality, trustworthy advice?
+                    <div class="question_text">
+                        Q5: How often do you wish you had access to a real world technology vision expert to give quality, trustworthy advice?
                     </div>
                 </div>
-                <!-- Actual Question -->
                 <div class="row g-3">
-                    <div class="col-1-of-2 offset">
-                        <!-- Left -->
-                        <div class="form-check">
-                            <input 
-                                class="form-check-input multiple-choice" 
-                                type="radio" 
-                                name="option" 
-                                id="option1" 
-                                value="option1">
-                            <label 
-                                class="form-check-label" 
-                                for="option1">
-                                Always
-                            </label>
-                        </div>
-                        <br>
-                        <div class="form-check">
-                            <input 
-                                class="form-check-input multiple-choice" 
-                                type="radio" 
-                                name="option" 
-                                id="option2" 
-                                value="option2">
-                            <label 
-                                class="form-check-label" 
-                                for="option2">
-                                Rarely
-                            </label>
-                        </div>
-                        <br>
-                        <div class="form-check">
-                            <input 
-                                class="form-check-input multiple-choice" 
-                                type="radio" 
-                                name="option" 
-                                id="option3" 
-                                value="option3">
-                            <label 
-                                class="form-check-label" 
-                                for="option3">
-                                Other <span>(please specify)</span>
-                            </label>
-                            <input 
-                                type="text" 
-                                name="other" 
-                                class="form-control inline-other" 
-                                aria-label="Text input with radio button">
-                        </div>
-                    </div>  
-                    <div class="col-1-of-2 offset">
-                        <!-- Right -->
-                        <div class="form-check">
-                            <input 
-                                class="form-check-input multiple-choice" 
-                                type="radio" 
-                                name="option" 
-                                id="option1" 
-                                value="option1" >
-                            <label 
-                                class="form-check-label" 
-                                for="option1">
-                                Often
-                            </label>
-                        </div>
-                        <br>
-                        <div class="form-check">
-                            <input 
-                                class="form-check-input multiple-choice" 
-                                type="radio" 
-                                name="option" 
-                                id="option2" 
-                                value="option2">
-                            <label 
-                                class="form-check-label" 
-                                for="option2">
-                                Never
-                            </label>
-                        </div>
-                        <br>
-                        <div class="form-check">
-                            <input 
-                                class="form-check-input multiple-choice" 
-                                type="radio" 
-                                name="option" 
-                                id="option3" 
-                                value="option3">
-                            <label 
-                                class="form-check-label" 
-                                for="option3">
-                                Occasionally
-                            </label>
-                        </div>
-                    </div>  
+                    <input type="radio" id="access_freq_always" name="access_freq" value="always">
+                    <label for="always">Always</label>
+                    <input type="radio" id="access_freq_often" name="access_freq" value="often">
+                    <label for="often">Often</label>
+                    <input type="radio" id="access_freq_occasionally" name="access_freq" value="occasionally">
+                    <label for="occasionally">Occasionally</label>
+                    <input type="radio" id="access_freq_rarely" name="access_freq" value="rarely">
+                    <label for="rarely">Rarely</label>
+                    <input type="radio" id="access_freq_never" name="access_freq" value="never">
+                    <label for="never">Never</label>
+                    <input type="radio" id="access_freq_other" name="access_freq" value="other">
+                    <label for="other">Other</label><br>
+                    <input type="text" id="access_freq_other_explain" name="access_freq_text">
+                    <label for="access_freq_other_explain">Please specify</label>
                 </div>
                 <br>
-                <br>
                 <!-- Q6 -->
-                <div class="row g-3">
-                    <div class="question__text">
+                <div class="row">
+                    <div class="question_text">
                         Q6: We’re sure you have multiple goals right now.  Amongst all of them, how important is it for you to address your technology challenges?<br>
                         <span>1 being the least important goal and 7 being the most important goal.</span>
                     </div>
                 </div>
-                <!-- Actual Question -->
                 <div class="row g-3">
-                    <div class="row">
-                        <div class="col-1-of-7 offset">
-                            <div class="form-check form-check-inline">
-                                <input 
-                                    class="form-check-input multiple-choice" 
-                                    type="radio" 
-                                    name="inlineRadioOptions" 
-                                    id="inlineRadio1" 
-                                    value="option1">
-                                <label 
-                                class="form-check-label" 
-                                for="inlineRadio1">
-                                    1
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-1-of-7 offset">
-                            <div class="form-check form-check-inline">
-                                <input 
-                                    class="form-check-input multiple-choice" 
-                                    type="radio" 
-                                    name="inlineRadioOptions" 
-                                    id="inlineRadio1" 
-                                    value="option1">
-                                <label 
-                                class="form-check-label" 
-                                for="inlineRadio1">
-                                    2
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-1-of-7 offset">
-                            <div class="form-check form-check-inline">
-                                <input 
-                                    class="form-check-input multiple-choice" 
-                                    type="radio" 
-                                    name="inlineRadioOptions" 
-                                    id="inlineRadio1" 
-                                    value="option1">
-                                <label 
-                                class="form-check-label" 
-                                for="inlineRadio1">
-                                    3
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-1-of-7 offset">
-                            <div class="form-check form-check-inline">
-                                <input 
-                                    class="form-check-input multiple-choice" 
-                                    type="radio" 
-                                    name="inlineRadioOptions" 
-                                    id="inlineRadio1" 
-                                    value="option1">
-                                <label 
-                                class="form-check-label" 
-                                for="inlineRadio1">
-                                    4
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-1-of-7 offset">
-                            <div class="form-check form-check-inline">
-                                <input 
-                                    class="form-check-input multiple-choice" 
-                                    type="radio" 
-                                    name="inlineRadioOptions" 
-                                    id="inlineRadio1" 
-                                    value="option1">
-                                <label 
-                                class="form-check-label" 
-                                for="inlineRadio1">
-                                    5
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-1-of-7 offset">
-                            <div class="form-check form-check-inline">
-                                <input 
-                                    class="form-check-input multiple-choice" 
-                                    type="radio" 
-                                    name="inlineRadioOptions" 
-                                    id="inlineRadio1" 
-                                    value="option1">
-                                <label 
-                                class="form-check-label" 
-                                for="inlineRadio1">
-                                    6
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-1-of-7 offset">
-                            <div class="form-check form-check-inline">
-                                <input 
-                                    class="form-check-input multiple-choice" 
-                                    type="radio" 
-                                    name="inlineRadioOptions" 
-                                    id="inlineRadio1" 
-                                    value="option1">
-                                <label 
-                                class="form-check-label" 
-                                for="inlineRadio1">
-                                    7
-                                </label>
-                            </div>
-                        </div>
-                    </div>
+                    <input type="radio" id="tech_challenge_1" name="tech_challenge" value="1">
+                    <label for="1">1</label>
+                    <input type="radio" id="tech_challenge_2" name="tech_challenge" value="2">
+                    <label for="2">2</label>
+                    <input type="radio" id="tech_challenge_3" name="tech_challenge" value="3">
+                    <label for="3">3</label>
+                    <input type="radio" id="tech_challenge_4" name="tech_challenge" value="4">
+                    <label for="4">4</label>
+                    <input type="radio" id="tech_challenge_5" name="tech_challenge" value="5">
+                    <label for="5">5</label>
+                    <input type="radio" id="tech_challenge_6" name="tech_challenge" value="6">
+                    <label for="6">6</label><br>
+                    <input type="radio" id="tech_challenge_7" name="tech_challenge" value="7">
+                    <label for="7">7</label><br>
                 </div>
-                <br>
-                <div class="row g-3">
-                    <div class="question__subtext">
+                <div class="question__subtext">
                         Please describe your most immediate technology challenge:
-                    </div>
-                    <div class="mb-3">
-                        <textarea 
-                            class="form-control input" 
-                            id="open-ended-response1" 
-                            rows="8">
-                        </textarea>
-                    </div>
+                </div>
+                <div class="row g-3">
+                    <textarea id="tech_challenge_description" name="tech_challenge_description" rows="8"></textarea>
                 </div>
                 <br>
                 <!-- Q7 -->
                 <div class="row">
-                    <div class="question__text">
+                    <div class="question_text">
                         Q7: When trying to achieve this technology challenge, what are the roadblocks you’re running into? What’s standing in your way?
                     </div>
                 </div>
-                <!-- Actual Question -->
                 <div class="row g-3">
-                    <div class="col-1-of-2 offset">
-                        <!-- Left -->
-                        <div class="form-check">
-                            <input 
-                                class="form-check-input multiple-choice" 
-                                type="checkbox" 
-                                name="option" 
-                                id="option1" 
-                                value="option1">
-                            <label 
-                                class="form-check-label" 
-                                for="option1">
-                                Articulating your technology needs
-                            </label>
-                        </div>
-                        <br>
-                        <div class="form-check">
-                            <input 
-                                class="form-check-input multiple-choice" 
-                                type="checkbox" 
-                                name="option" 
-                                id="option2" 
-                                value="option2">
-                            <label 
-                                class="form-check-label" 
-                                for="option2">
-                                Lack of resources/money
-                            </label>
-                        </div>
-                        <br>
-                        <div class="form-check">
-                            <input 
-                                class="form-check-input multiple-choice" 
-                                type="checkbox" 
-                                name="option" 
-                                id="option3" 
-                                value="option3">
-                            <label 
-                                class="form-check-label" 
-                                for="option3">
-                                Other <span>(please specify)</span>
-                            </label>
-                            <input 
-                                type="text" 
-                                name="other" 
-                                class="form-control inline-other" 
-                                aria-label="Text input with checkbox button">
-                        </div>
-                    </div>  
-                    <div class="col-1-of-2 offset">
-                        <!-- Right -->
-                        <div class="form-check">
-                            <input 
-                                class="form-check-input multiple-choice" 
-                                type="checkbox" 
-                                name="option" 
-                                id="option1" 
-                                value="option1" >
-                            <label 
-                                class="form-check-label" 
-                                for="option1">
-                                Having a single person of contact to give quality advice
-                            </label>
-                        </div>
-                        <br>
-                        <div class="form-check">
-                            <input 
-                                class="form-check-input multiple-choice" 
-                                type="checkbox" 
-                                name="option" 
-                                id="option2" 
-                                value="option2">
-                            <label 
-                                class="form-check-label" 
-                                for="option2">
-                                Meeting deadlines
-                            </label>
-                        </div>
-                        <br>
-                        <div class="form-check">
-                            <input 
-                                class="form-check-input multiple-choice" 
-                                type="checkbox" 
-                                name="option" 
-                                id="option3" 
-                                value="option3">
-                            <label 
-                                class="form-check-label" 
-                                for="option3">
-                                Working with dev agency
-                            </label>
-                        </div>
-                    </div>  
+                    <input type="checkbox" id="roadblocks_tech-need" name="roadblocks" value="tech-need">
+                    <label for="tech-need">Articulating your technology needs</label>
+                    <input type="checkbox" id="roadblocks_advice" name="roadblocks" value="advice">
+                    <label for="advice">Having a single person of contact to give quality advice</label>
+                    <input type="checkbox" id="roadblocks_lack" name="roadblocks" value="lack">
+                    <label for="lack">Lack of resources/money</label>
+                    <input type="checkbox" id="roadblocks_deadlines" name="roadblocks" value="deadlines">
+                    <label for="deadlines">Meeting deadlines</label>
+                    <input type="checkbox" id="roadblocks_dev-agency" name="roadblocks" value="dev-agency">
+                    <label for="dev-agency">Working with a dev agency</label>
+                    <input type="checkbox" id="roadblocks_other" name="roadblocks" value="other">
+                    <label for="other">Other</label><br>
+                    <input type="text" id="roadblocks_other_explain" name="roadblocks_text">
+                    <label for="roadblocks_other_explain">Please specify</label>
                 </div>
-                <br>
                 <br>
                 <!-- Q8 -->
                 <div class="row">
-                    <div class="question__text">
+                    <div class="question_text">
                         Q8: Among all your business and startup priorities, what is the timeline to solve your most immediate technology challenge?
                     </div>
                 </div>
-                <!-- Actual Question -->
                 <div class="row g-3">
-                    <div class="col-1-of-2 offset">
-                        <!-- Left -->
-                        <div class="form-check">
-                            <input 
-                                class="form-check-input multiple-choice" 
-                                type="radio" 
-                                name="option" 
-                                id="option1" 
-                                value="option1">
-                            <label 
-                                class="form-check-label" 
-                                for="option1">
-                                Within 4 weeks
-                            </label>
-                        </div>
-                        <br>
-                        <div class="form-check">
-                            <input 
-                                class="form-check-input multiple-choice" 
-                                type="radio" 
-                                name="option" 
-                                id="option2" 
-                                value="option2">
-                            <label 
-                                class="form-check-label" 
-                                for="option2">
-                                Within 3 months
-                            </label>
-                        </div>
-                        <br>
-                        <div class="form-check">
-                            <input 
-                                class="form-check-input multiple-choice" 
-                                type="radio" 
-                                name="option" 
-                                id="option3" 
-                                value="option3">
-                            <label 
-                                class="form-check-label" 
-                                for="option3">
-                                Other <span>(please specify)</span>
-                            </label>
-                            <input 
-                                type="text" 
-                                name="other" 
-                                class="form-control inline-other" 
-                                aria-label="Text input with radio button">
-                        </div>
-                    </div>  
-                    <div class="col-1-of-2 offset">
-                        <!-- Right -->
-                        <div class="form-check">
-                            <input 
-                                class="form-check-input multiple-choice" 
-                                type="radio" 
-                                name="option" 
-                                id="option1" 
-                                value="option1" >
-                            <label 
-                                class="form-check-label" 
-                                for="option1">
-                                Within 1 month
-                            </label>
-                        </div>
-                        <br>
-                        <div class="form-check">
-                            <input 
-                                class="form-check-input multiple-choice" 
-                                type="radio" 
-                                name="option" 
-                                id="option2" 
-                                value="option2">
-                            <label 
-                                class="form-check-label" 
-                                for="option2">
-                                Within 6 months
-                            </label>
-                        </div>
-                        <br>
-                        <div class="form-check">
-                            <input 
-                                class="form-check-input multiple-choice" 
-                                type="radio" 
-                                name="option" 
-                                id="option3" 
-                                value="option3">
-                            <label 
-                                class="form-check-label" 
-                                for="option3">
-                                Within a year
-                            </label>
-                        </div>
-                    </div>  
+                    <input type="radio" id="timeline_within-4w" name="timeline" value="within-4w">
+                    <label for="within-4w">Within 4 weeks</label>
+                    <input type="radio" id="timeline_within-1m" name="timeline" value="within-1m">
+                    <label for="within-1m">Within 1 month</label>
+                    <input type="radio" id="timeline_within-3m" name="timeline" value="within-3m">
+                    <label for="within-3m">Within 3 months</label>
+                    <input type="radio" id="timeline_within-6m" name="timeline" value="within-6m">
+                    <label for="within-6m">Within 6 months</label>
+                    <input type="radio" id="timeline_within-1y" name="timeline" value="within-1y">
+                    <label for="within-1y">Within 1 year</label>
+                    <input type="radio" id="timeline_other" name="timeline" value="other">
+                    <label for="other">Other</label><br>
+                    <input type="text" id="timeline_other_explain" name="timeline_text">
+                    <label for="timeline_other_explain">Please specify</label>
                 </div>
-                <br>
-                <br>
                 <!-- Q9 -->
                 <div class="row">
                     <div class="question__text">
@@ -707,33 +186,25 @@
                         “Your Privacy is Our Policy.*”
                     </div>
                 </div>
-                <!-- Actual Question -->
-                <div class="row g-3">
-                    <div class="col">
-                        <input type="text" 
-                            class="form-control form-control-lg input" 
-                            placeholder="First name" 
-                            aria-label="First name">
+                <div class="row">
+                    <div class="col-6">
+                        <input type="text" id="first_name" name="subscribe" placeholder="First name">
+                        <label for="first_name">First Name</label>
                     </div>
-                    <div class="col">
-                        <input type="text" 
-                            class="form-control form-control-lg input" 
-                            placeholder="Last name" 
-                            aria-label="Last name">
+                    <div class="col-6">
+                        <input type="text" id="last_name" name="subscribe" placeholder="Last name">
+                        <label for="last_name">Last Name</label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12">
-                        <input type="email" 
-                            class="form-control form-control-lg input" 
-                            placeholder="jane.doe@email.com" 
-                            aria-label="Email Address">
-                    </div>
+                    <input type="text" id="email" name="subscribe" placeholder="jane.doe@email.com">
+                    <label for="email">Email Address</label>
                 </div>
+
                 <!-- Submit Button -->
                 <div class="row">
                     <div class="col text-center">
-                        <button type="submit" class="btn button">SUBMIT</button>
+                        <button type="submit" class="btn button">SUBMIT RESPONSES</button>
                     </div>
                 </div>
             </form>

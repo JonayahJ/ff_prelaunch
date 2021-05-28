@@ -1,0 +1,49 @@
+.subscribe {
+    background: #fafbfb;
+    padding: 10rem 0;
+
+    &__header {
+        font-size: 5rem;
+        text-align: center;
+        color: $keppel;
+        font-weight: 700;
+        margin-bottom: 4rem;
+    }
+
+    &__text {
+        text-align: center;
+        font-weight: lighter;
+        font-size: 2.5rem;
+
+        &-mini {
+            text-align: center;
+            font-size: 1.5rem;
+        }
+    }
+
+    &__input {
+        text-align: center;
+    }
+
+    #input {
+        padding-left: 1.2rem;
+        border: 1px solid $keppel;
+        border-radius: 0.5rem;
+        text-align: left;
+        font-size: 1.5rem;
+    }
+
+    #button {
+        padding: 2rem 5rem;
+        border: none;
+        border-radius: 0.5rem;
+        background: $keppel;
+        color: $color-white;
+        font-size: 1.5rem;
+
+        &:hover {
+            background: $light-cornflower-blue;
+            transition: all 0.3s ease;
+        }
+    }
+}
