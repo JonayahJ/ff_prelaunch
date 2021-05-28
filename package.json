@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "compile:sass": "node-sass fourfront_prelaunch/static/sass/main.scss fourfront_prelaunch/static/css/styles.css -w"
+  },
+  "dependencies": {
+    "node-sass": "^6.0.0"
+  }
+}
