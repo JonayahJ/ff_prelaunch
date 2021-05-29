@@ -19,15 +19,17 @@
                         Q1. Are you a startup Founder or Co-Founder with no prior technology experience?
                     </div>
                 </div>
-                <div class="row g-3">
-                    <input type="radio" id="tech_exp_yes" name="tech_exp" value="yes">
-                    <label for="yes">Yes</label>
-                    <input type="radio" id="tech_exp_no" name="tech_exp" value="no">
-                    <label for="no">No</label>
-                    <input type="radio" id="tech_exp_other" name="tech_exp" value="other">
-                    <label for="other">Other</label><br>
-                    <input type="text" id="tech_exp_other_explain" name="tech_exp_text">
-                    <label for="tech_exp_other_explain">Please specify</label>
+                <div class="row g-3 {% if form.tech_exp.errors %}errors{% endif %}">
+                    {{ form.tech_exp }}
+                    {{ form.tech_exp.errors }}
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <p>If other, please specify:</p>
+                    </div>
+                    <div class="col-10">
+                        {{ form.tech_exp_text}}
+                    </div>
                 </div>
                 <br>
                 <!-- Q2 -->
@@ -36,15 +38,17 @@
                         Q2: Do you have a technical founder or a full-time CTO?
                     </div>
                 </div>
-                <div class="row g-3">
-                    <input type="radio" id="tech_founder_yes" name="tech_founder" value="yes">
-                    <label for="yes">Yes</label>
-                    <input type="radio" id="tech_founder_no" name="tech_founder" value="no">
-                    <label for="no">No</label>
-                    <input type="radio" id="tech_founder_other" name="tech_founder" value="other">
-                    <label for="other">Other</label><br>
-                    <input type="text" id="tech_founder_other_explain" name="tech_founder_text">
-                    <label for="tech_founder_other_explain">Please specify</label>
+                <div class="row g-3 {% if form.tech_founder.errors %}errors{% endif %}">
+                    {{ form.tech_founder }}
+                    {{ form.tech_founder.errors }}
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <p>If other, please specify:</p>
+                    </div>
+                    <div class="col-10">
+                        {{ form.tech_exp_text}}
+                    </div>
                 </div>
                 <br>
                 <!-- Q3 -->
@@ -53,21 +57,17 @@
                         Q3: What is your startup stage?
                     </div>
                 </div>
-                <div class="row g-3">
-                    <input type="radio" id="startup_stage_no-proof" name="startup_stage" value="no-proof">
-                    <label for="no-proof">Have an idea, no proof of concept</label>
-                    <input type="radio" id="startup_stage_proof" name="startup_stage" value="proof">
-                    <label for="proof">Done proof of concept, not validated</label>
-                    <input type="radio" id="startup_stage_pre-rev" name="startup_stage" value="pre-rev">
-                    <label for="pre-rev">Pre-Revenue</label>
-                    <input type="radio" id="startup_stage_rev" name="startup_stage" value="rev">
-                    <label for="rev">Revenue</label>
-                    <input type="radio" id="startup_stage_val-comm" name="startup_stage" value="val-comm">
-                    <label for="val-comm">Validated and committed</label>
-                    <input type="radio" id="startup_stage_other" name="startup_stage" value="other">
-                    <label for="other">Other</label><br>
-                    <input type="text" id="startup_stage_other_explain" name="startup_stage_text">
-                    <label for="startup_stage_other_explain">Please specify</label>
+                <div class="row g-3 {% if form.startup_stage.errors %}errors{% endif %}">
+                    {{ form.startup_stage }}
+                    {{ form.startup_stage.errors }}
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <p>If other, please specify:</p>
+                    </div>
+                    <div class="col-10">
+                        {{ form.tech_exp_text}}
+                    </div>
                 </div>
                 <br>
                 <!-- Q4 -->
@@ -77,7 +77,7 @@
                     </div>
                 </div>
                 <div class="row g-3">
-                    <textarea id="startup_description" name="startup_description" rows="8"></textarea>
+                    {{ form.startup_description }}
                 </div>
                 <br>
                 <!-- Q5 -->
@@ -86,21 +86,17 @@
                         Q5: How often do you wish you had access to a real world technology vision expert to give quality, trustworthy advice?
                     </div>
                 </div>
-                <div class="row g-3">
-                    <input type="radio" id="access_freq_always" name="access_freq" value="always">
-                    <label for="always">Always</label>
-                    <input type="radio" id="access_freq_often" name="access_freq" value="often">
-                    <label for="often">Often</label>
-                    <input type="radio" id="access_freq_occasionally" name="access_freq" value="occasionally">
-                    <label for="occasionally">Occasionally</label>
-                    <input type="radio" id="access_freq_rarely" name="access_freq" value="rarely">
-                    <label for="rarely">Rarely</label>
-                    <input type="radio" id="access_freq_never" name="access_freq" value="never">
-                    <label for="never">Never</label>
-                    <input type="radio" id="access_freq_other" name="access_freq" value="other">
-                    <label for="other">Other</label><br>
-                    <input type="text" id="access_freq_other_explain" name="access_freq_text">
-                    <label for="access_freq_other_explain">Please specify</label>
+                <div class="row g-3 {% if form.access_freq.errors %}errors{% endif %}">
+                    {{ form.access_freq }}
+                    {{ form.access_freq.errors }}
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <p>If other, please specify:</p>
+                    </div>
+                    <div class="col-10">
+                        {{ form.tech_exp_text}}
+                    </div>
                 </div>
                 <br>
                 <!-- Q6 -->
@@ -110,50 +106,34 @@
                         <span>1 being the least important goal and 7 being the most important goal.</span>
                     </div>
                 </div>
-                <div class="row g-3">
-                    <input type="radio" id="tech_challenge_1" name="tech_challenge" value="1">
-                    <label for="1">1</label>
-                    <input type="radio" id="tech_challenge_2" name="tech_challenge" value="2">
-                    <label for="2">2</label>
-                    <input type="radio" id="tech_challenge_3" name="tech_challenge" value="3">
-                    <label for="3">3</label>
-                    <input type="radio" id="tech_challenge_4" name="tech_challenge" value="4">
-                    <label for="4">4</label>
-                    <input type="radio" id="tech_challenge_5" name="tech_challenge" value="5">
-                    <label for="5">5</label>
-                    <input type="radio" id="tech_challenge_6" name="tech_challenge" value="6">
-                    <label for="6">6</label><br>
-                    <input type="radio" id="tech_challenge_7" name="tech_challenge" value="7">
-                    <label for="7">7</label><br>
+                <div class="row g-3 {% if form.tech_challenge.errors %}errors{% endif %}">
+                    {{ form.tech_challenge }}
+                    {{ form.tech_challenge.errors }}
                 </div>
                 <div class="question__subtext">
                         Please describe your most immediate technology challenge:
                 </div>
                 <div class="row g-3">
-                    <textarea id="tech_challenge_description" name="tech_challenge_description" rows="8"></textarea>
+                    {{ form.tech_challenge_description }}
                 </div>
                 <br>
                 <!-- Q7 -->
                 <div class="row">
                     <div class="question_text">
-                        Q7: When trying to achieve this technology challenge, what are the roadblocks you’re running into? What’s standing in your way?
+                        Q7: When trying to achieve this technology challenge, what are the roadblocks you’re running into? What’s standing in your way?  Please select all that apply.
                     </div>
                 </div>
-                <div class="row g-3">
-                    <input type="checkbox" id="roadblocks_tech-need" name="roadblocks" value="tech-need">
-                    <label for="tech-need">Articulating your technology needs</label>
-                    <input type="checkbox" id="roadblocks_advice" name="roadblocks" value="advice">
-                    <label for="advice">Having a single person of contact to give quality advice</label>
-                    <input type="checkbox" id="roadblocks_lack" name="roadblocks" value="lack">
-                    <label for="lack">Lack of resources/money</label>
-                    <input type="checkbox" id="roadblocks_deadlines" name="roadblocks" value="deadlines">
-                    <label for="deadlines">Meeting deadlines</label>
-                    <input type="checkbox" id="roadblocks_dev-agency" name="roadblocks" value="dev-agency">
-                    <label for="dev-agency">Working with a dev agency</label>
-                    <input type="checkbox" id="roadblocks_other" name="roadblocks" value="other">
-                    <label for="other">Other</label><br>
-                    <input type="text" id="roadblocks_other_explain" name="roadblocks_text">
-                    <label for="roadblocks_other_explain">Please specify</label>
+                <div class="row g-3 {% if form.roadblocks.errors %}errors{% endif %}">
+                    {{ form.roadblocks }}
+                    {{ form.roadblocks.errors }}
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <p>If other, please specify:</p>
+                    </div>
+                    <div class="col-10">
+                        {{ form.tech_exp_text}}
+                    </div>
                 </div>
                 <br>
                 <!-- Q8 -->
@@ -162,21 +142,17 @@
                         Q8: Among all your business and startup priorities, what is the timeline to solve your most immediate technology challenge?
                     </div>
                 </div>
-                <div class="row g-3">
-                    <input type="radio" id="timeline_within-4w" name="timeline" value="within-4w">
-                    <label for="within-4w">Within 4 weeks</label>
-                    <input type="radio" id="timeline_within-1m" name="timeline" value="within-1m">
-                    <label for="within-1m">Within 1 month</label>
-                    <input type="radio" id="timeline_within-3m" name="timeline" value="within-3m">
-                    <label for="within-3m">Within 3 months</label>
-                    <input type="radio" id="timeline_within-6m" name="timeline" value="within-6m">
-                    <label for="within-6m">Within 6 months</label>
-                    <input type="radio" id="timeline_within-1y" name="timeline" value="within-1y">
-                    <label for="within-1y">Within 1 year</label>
-                    <input type="radio" id="timeline_other" name="timeline" value="other">
-                    <label for="other">Other</label><br>
-                    <input type="text" id="timeline_other_explain" name="timeline_text">
-                    <label for="timeline_other_explain">Please specify</label>
+                <div class="row g-3 {% if form.timeline.errors %}errors{% endif %}">
+                    {{ form.timeline }}
+                    {{ form.timeline.errors }}
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <p>If other, please specify:</p>
+                    </div>
+                    <div class="col-10">
+                        {{ form.tech_exp_text}}
+                    </div>
                 </div>
                 <!-- Q9 -->
                 <div class="row">
@@ -188,18 +164,19 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6">
-                        <input type="text" id="first_name" name="subscribe_first-name" placeholder="First name">
-                        <label for="first_name">First Name</label>
+                    <div class="col-6 {% if form.subscriber_first_name.errors %}errors{% endif %}">
+                        {{ form.subscriber_first_name }}
+                        {{ form.subscriber_first_name.errors }}
                     </div>
-                    <div class="col-6">
-                        <input type="text" id="last_name" name="subscribe_last-name" placeholder="Last name">
-                        <label for="last_name">Last Name</label>
+                    <div class="col-6 {% if form.subscriber_last_name.errors %}errors{% endif %}">
+                        {{ form.subscriber_last_name }}
+                        {{ form.subscriber_last_name.errors }}
                     </div>
                 </div>
-                <div class="row">
-                    <input type="text" id="email" name="subscribe_email" placeholder="jane.doe@email.com">
-                    <label for="email">Email Address</label>
+                <br>
+                <div class="row {% if form.subscriber_email.errors %}errors{% endif %}">
+                    {{ form.subscriber_email }}
+                    {{ form.subscriber_email.errors }}
                 </div>
 
                 <!-- Submit Button -->
@@ -210,13 +187,5 @@
                 </div>
             </form>
         </section>        
-        
-        {% comment %} <!-- Thank You -->
-        <section class="thank-you">
-            <h1>
-                Thank you for filling out our questionnaire!
-            </h1>
-        </section> {% endcomment %}
-        
     </main>
 {% endblock %}

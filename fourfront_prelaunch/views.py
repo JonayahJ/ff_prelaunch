@@ -1,6 +1,9 @@
+from fourfront_prelaunch.forms import SurveyForm
 from django.views.generic import TemplateView
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+
+# from . forms import SurveyForm
 
 # Create your views here.
 
@@ -12,11 +15,18 @@ class SurveyPageView(TemplateView):
 
 def survey(request):
     if request.method == "POST":
-        subscriber_email = request.POST["subscribe_email"]
-        print(subscriber_email)
-        return HttpResponseRedirect("/thank-you")
+        form = SurveyForm(request.POST)
 
-    return render(request, "survey.html")
+        if form.is_valid():
+            print(form.cleaned_data)
+            return HttpResponseRedirect("/thank-you")
+
+    else:
+        form = SurveyForm()
+    
+    return render(request, "survey.html", {
+        "form": form
+    })
 
 def thank_you(request):
     return render(request, "thank_you.html")
