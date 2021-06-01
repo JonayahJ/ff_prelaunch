@@ -7,153 +7,300 @@
 {% endblock %}
 
 {% block content %}
+{% load static %}
     <!-- Main -->
     <main>
         <section class="question">
-            <form action="/thank-you" role="form" method="POST" name="survey">
+            <form action="{% url 'survey' %}" method="POST">
                 {% csrf_token %}
-                <input type="hidden" name="survey_id" value="{{ survey.id }}"
                 {% comment %} Q1 {% endcomment %}
                 <div class="row">
-                    <div class="question_text">
+                    <div class="question__text">
                         Q1. Are you a startup Founder or Co-Founder with no prior technology experience?
                     </div>
                 </div>
-                <div class="row g-3 {% if form.tech_exp.errors %}errors{% endif %}">
-                    {{ form.tech_exp }}
-                    {{ form.tech_exp.errors }}
+                <div class="row g-3 ">
+                    <div class="col-1-of-3 offset">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input multiple-choice" type="radio" name="tech_exp" id="tech_exp1" value="yes">
+                            <label class="form-check-label" for="tech_exp1">Yes</label>
+                        </div>
+                    </div>
+                    <div class="col-1-of-3 offset">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input multiple-choice" type="radio" name="tech_exp" id="tech_exp2" value="no">
+                            <label class="form-check-label" for="tech_exp2">No</label>
+                        </div>
+                    </div>
+                    <div class="col-1-of-3 offset">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input multiple-choice" type="radio" name="tech_exp" id="tech_exp3" value="other">
+                            <label class="form-check-label" for="tech_exp3">Other</label>
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="col-2">
-                        <p>If other, please specify:</p>
-                    </div>
-                    <div class="col-10">
-                        {{ form.tech_exp_text}}
-                    </div>
+                <div class="row g-3 question__subtext">
+                    <p>If other, please specify:</p>
+                    <input type="text" name="tech_exp_text" class="form-control" style="font-size: 1.8rem;" placeholder="Please explain.">
                 </div>
                 <br>
                 <!-- Q2 -->
                 <div class="row">
-                    <div class="question_text">
+                    <div class="question__text">
                         Q2: Do you have a technical founder or a full-time CTO?
                     </div>
                 </div>
-                <div class="row g-3 {% if form.tech_founder.errors %}errors{% endif %}">
-                    {{ form.tech_founder }}
-                    {{ form.tech_founder.errors }}
+                <div class="row g-3 ">
+                    <div class="col-1-of-3 offset">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input multiple-choice" type="radio" name="tech_founder" id="tech_founder1" value="yes">
+                            <label class="form-check-label" for="tech_founder1">Yes</label>
+                        </div>
+                    </div>
+                    <div class="col-1-of-3 offset">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input multiple-choice" type="radio" name="tech_founder" id="tech_founder2" value="no">
+                            <label class="form-check-label" for="tech_founder2">No</label>
+                        </div>
+                    </div>
+                    <div class="col-1-of-3 offset">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input multiple-choice" type="radio" name="tech_founder" id="tech_founder3" value="other">
+                            <label class="form-check-label" for="tech_founder3">Other</label>
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="col-2">
-                        <p>If other, please specify:</p>
-                    </div>
-                    <div class="col-10">
-                        {{ form.tech_exp_text}}
-                    </div>
+                <div class="row g-3 question__subtext">
+                    <p>If other, please specify:</p>
+                    <input type="text" name="tech_founder_text" class="form-control" style="font-size: 1.8rem;" placeholder="Please explain.">
                 </div>
                 <br>
                 <!-- Q3 -->
                 <div class="row">
-                    <div class="question_text">
+                    <div class="question__text">
                         Q3: What is your startup stage?
                     </div>
                 </div>
-                <div class="row g-3 {% if form.startup_stage.errors %}errors{% endif %}">
-                    {{ form.startup_stage }}
-                    {{ form.startup_stage.errors }}
+                <div class="row g-3 ">
+                    <div class="col-1-of-2 offset">
+                        <div class="form-check">
+                            <input class="form-check-input multiple-choice" type="radio" name="startup_stage" id="startup_stage1" value="no-proof">
+                            <label class="form-check-label" for="startup_stage1">Have an idea, no proof of concept</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input multiple-choice" type="radio" name="startup_stage" id="startup_stage2" value="proof">
+                            <label class="form-check-label" for="startup_stage2">Done proof of concept, not validated</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input multiple-choice" type="radio" name="startup_stage" id="startup_stage3" value="pre-rev">
+                            <label class="form-check-label" for="startup_stage3">Pre-Revenue</label>
+                        </div>
+                    </div>
+                    <div class="col-1-of-2 offset">
+                        
+                        <div class="form-check">
+                            <input class="form-check-input multiple-choice" type="radio" name="startup_stage" id="startup_stage4" value="rev">
+                            <label class="form-check-label" for="startup_stage4">Revenue</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input multiple-choice" type="radio" name="startup_stage" id="startup_stage5" value="val-comm">
+                            <label class="form-check-label" for="startup_stage5">Validated and committed</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input multiple-choice" type="radio" name="startup_stage" id="startup_stage6" value="other">
+                            <label class="form-check-label" for="startup_stage6">Other</label>
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="col-2">
-                        <p>If other, please specify:</p>
-                    </div>
-                    <div class="col-10">
-                        {{ form.tech_exp_text}}
-                    </div>
+                <div class="row g-3 question__subtext">
+                    <p>If other, please specify:</p>
+                    <input type="text" name="startup_stage_text" class="form-control" style="font-size: 1.8rem;" placeholder="Please explain.">
                 </div>
                 <br>
                 <!-- Q4 -->
                 <div class="row">
-                    <div class="question_text">
+                    <div class="question__text">
                         Q4: Briefly describe your business. What is the problem you’re trying to solve? Who is your customer? And how are you solving their problem?
                     </div>
                 </div>
                 <div class="row g-3">
-                    {{ form.startup_description }}
+                    <textarea class="form-control mb-3" id="startup_description" name="startup_description" rows="15" style="font-size: 1.8rem;"></textarea>
                 </div>
                 <br>
                 <!-- Q5 -->
                 <div class="row">
-                    <div class="question_text">
+                    <div class="question__text">
                         Q5: How often do you wish you had access to a real world technology vision expert to give quality, trustworthy advice?
                     </div>
                 </div>
-                <div class="row g-3 {% if form.access_freq.errors %}errors{% endif %}">
-                    {{ form.access_freq }}
-                    {{ form.access_freq.errors }}
+                <div class="row g-3 ">
+                    <div class="col-1-of-2 offset">
+                        <div class="form-check">
+                            <input class="form-check-input multiple-choice" type="radio" name="access_freq" id="access_freq1" value="always">
+                            <label class="form-check-label" for="access_freq1">Always</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input multiple-choice" type="radio" name="access_freq" id="access_freq2" value="often">
+                            <label class="form-check-label" for="access_freq2">Often</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input multiple-choice" type="radio" name="access_freq" id="access_freq3" value="occasionally">
+                            <label class="form-check-label" for="access_freq3">Occasionally</label>
+                        </div>
+                    </div>
+                    <div class="col-1-of-2 offset">
+                        
+                        <div class="form-check">
+                            <input class="form-check-input multiple-choice" type="radio" name="access_freq" id="access_freq4" value="rarely">
+                            <label class="form-check-label" for="access_freq4">Rarely</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input multiple-choice" type="radio" name="access_freq" id="access_freq5" value="never">
+                            <label class="form-check-label" for="access_freq5">Never</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input multiple-choice" type="radio" name="access_freq" id="access_freq6" value="other">
+                            <label class="form-check-label" for="access_freq6">Other</label>
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="col-2">
-                        <p>If other, please specify:</p>
-                    </div>
-                    <div class="col-10">
-                        {{ form.tech_exp_text}}
-                    </div>
+                <div class="row g-3 question__subtext">
+                    <p>If other, please specify:</p>
+                    <input type="text" name="access_freq_text" class="form-control" style="font-size: 1.8rem;" placeholder="Please explain.">
                 </div>
                 <br>
                 <!-- Q6 -->
                 <div class="row">
-                    <div class="question_text">
+                    <div class="question__text">
                         Q6: We’re sure you have multiple goals right now.  Amongst all of them, how important is it for you to address your technology challenges?<br>
                         <span>1 being the least important goal and 7 being the most important goal.</span>
                     </div>
                 </div>
-                <div class="row g-3 {% if form.tech_challenge.errors %}errors{% endif %}">
-                    {{ form.tech_challenge }}
-                    {{ form.tech_challenge.errors }}
-                </div>
-                <div class="question__subtext">
-                        Please describe your most immediate technology challenge:
-                </div>
                 <div class="row g-3">
-                    {{ form.tech_challenge_description }}
+                    {% comment %} {{ form.tech_challenge }} {% endcomment %}
+                    <div class="col-lg offset">
+                        <div class="form-check form-check-inline col-1-of-7">
+                            <input class="form-check-input multiple-choice" type="radio" name="tech_challenge" id="tech_challenge1" value="1">
+                            <label class="form-check-label" for="tech_challenge1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline col-1-of-7">
+                            <input class="form-check-input multiple-choice" type="radio" name="tech_challenge" id="tech_challenge2" value="2">
+                            <label class="form-check-label" for="tech_challenge2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline col-1-of-7">
+                            <input class="form-check-input multiple-choice" type="radio" name="tech_challenge" id="tech_challenge3" value="3">
+                            <label class="form-check-label" for="tech_challenge3">3</label>
+                        </div>
+                        <div class="form-check form-check-inline col-1-of-7">
+                            <input class="form-check-input multiple-choice" type="radio" name="tech_challenge" id="tech_challenge4" value="4">
+                            <label class="form-check-label" for="tech_challenge4">4</label>
+                        </div>
+                        <div class="form-check form-check-inline col-1-of-7">
+                            <input class="form-check-input multiple-choice" type="radio" name="tech_challenge" id="tech_challenge5" value="5">
+                            <label class="form-check-label" for="tech_challenge5">5</label>
+                        </div>
+                        <div class="form-check form-check-inline col-1-of-7">
+                            <input class="form-check-input multiple-choice" type="radio" name="tech_challenge" id="tech_challenge6" value="6">
+                            <label class="form-check-label" for="tech_challenge6">6</label>
+                        </div>
+                        <div class="form-check form-check-inline col-1-of-7">
+                            <input class="form-check-input multiple-choice" type="radio" name="tech_challenge" id="tech_challenge7" value="7">
+                            <label class="form-check-label" for="tech_challenge7">7</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row g-3">
+                    <div class="question__subtext">
+                        <p>Please describe your most immediate technology challenge:</p>
+                    </div>
+                    <textarea class="form-control mb-3" id="tech_challenge_description" name="tech_challenge_description" rows="15" style="font-size: 1.8rem;"></textarea>
                 </div>
                 <br>
                 <!-- Q7 -->
                 <div class="row">
-                    <div class="question_text">
+                    <div class="question__text">
                         Q7: When trying to achieve this technology challenge, what are the roadblocks you’re running into? What’s standing in your way?  Please select all that apply.
                     </div>
                 </div>
-                <div class="row g-3 {% if form.roadblocks.errors %}errors{% endif %}">
-                    {{ form.roadblocks }}
-                    {{ form.roadblocks.errors }}
+                <div class="row g-3 ">
+                    <div class="col-1-of-2 offset">
+                        <div class="form-check">
+                            <input class="form-check-input multiple-choice" type="checkbox" name="roadblocks" id="roadblocks1" value="tech_need">
+                            <label class="form-check-label" for="roadblocks1">Articulating your technology needs</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input multiple-choice" type="checkbox" name="roadblocks" id="roadblocks2" value="advice">
+                            <label class="form-check-label" for="roadblocks2">Having a single person of contact to give quality advice</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input multiple-choice" type="checkbox" name="roadblocks" id="roadblocks3" value="lack">
+                            <label class="form-check-label" for="roadblocks3">Lack of resources/money</label>
+                        </div>
+                    </div>
+                    <div class="col-1-of-2 offset">
+                        
+                        <div class="form-check">
+                            <input class="form-check-input multiple-choice" type="checkbox" name="roadblocks" id="roadblocks4" value="deadlines">
+                            <label class="form-check-label" for="roadblocks4">Meeting deadlines</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input multiple-choice" type="checkbox" name="roadblocks" id="roadblocks5" value="dev-agency">
+                            <label class="form-check-label" for="roadblocks5">Working with a development agency</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input multiple-choice" type="checkbox" name="roadblocks" id="roadblocks6" value="other">
+                            <label class="form-check-label" for="roadblocks6">Other</label>
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="col-2">
-                        <p>If other, please specify:</p>
-                    </div>
-                    <div class="col-10">
-                        {{ form.tech_exp_text}}
-                    </div>
+                <div class="row g-3 question__subtext">
+                    <p>If other, please specify:</p>
+                    <input type="text" name="roadblocks_text" class="form-control" style="font-size: 1.8rem;" placeholder="Please explain.">
                 </div>
                 <br>
                 <!-- Q8 -->
                 <div class="row">
-                    <div class="question_text">
+                    <div class="question__text">
                         Q8: Among all your business and startup priorities, what is the timeline to solve your most immediate technology challenge?
                     </div>
                 </div>
-                <div class="row g-3 {% if form.timeline.errors %}errors{% endif %}">
-                    {{ form.timeline }}
-                    {{ form.timeline.errors }}
-                </div>
-                <div class="row">
-                    <div class="col-2">
-                        <p>If other, please specify:</p>
+                <div class="row g-3 ">
+                    <div class="col-1-of-2 offset">
+                        <div class="form-check">
+                            <input class="form-check-input multiple-choice" type="radio" name="timeline" id="timeline1" value="within-4w">
+                            <label class="form-check-label" for="timeline1">Within 4 weeks</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input multiple-choice" type="radio" name="timeline" id="timeline2" value="within-1m">
+                            <label class="form-check-label" for="timeline2">Within 1 month</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input multiple-choice" type="radio" name="timeline" id="timeline3" value="within-3m">
+                            <label class="form-check-label" for="timeline3">Within 3 months</label>
+                        </div>
                     </div>
-                    <div class="col-10">
-                        {{ form.tech_exp_text}}
+                    <div class="col-1-of-2 offset">
+                        
+                        <div class="form-check">
+                            <input class="form-check-input multiple-choice" type="radio" name="timeline" id="timeline4" value="within-6m">
+                            <label class="form-check-label" for="timeline4">Within 6 months</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input multiple-choice" type="radio" name="timeline" id="timeline5" value="within-1y">
+                            <label class="form-check-label" for="timeline5">Within 1 year</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input multiple-choice" type="radio" name="timeline" id="timeline6" value="other">
+                            <label class="form-check-label" for="timeline6">Other</label>
+                        </div>
                     </div>
                 </div>
+                <div class="row g-3 question__subtext">
+                    <p>If other, please specify:</p>
+                    <input type="text" name="timeline_text" class="form-control" style="font-size: 1.8rem;" placeholder="Please explain.">
+                </div>
+                <br>
                 <!-- Q9 -->
                 <div class="row">
                     <div class="question__text">
@@ -163,20 +310,17 @@
                         “Your Privacy is Our Policy.*”
                     </div>
                 </div>
+                <br>
                 <div class="row">
-                    <div class="col-6 {% if form.subscriber_first_name.errors %}errors{% endif %}">
-                        {{ form.subscriber_first_name }}
-                        {{ form.subscriber_first_name.errors }}
+                    <div class="col-1-of-2 ">
+                        <input type="text" class="form-control form-control-lg input" placeholder="First name" name="subscriber_first_name">
                     </div>
-                    <div class="col-6 {% if form.subscriber_last_name.errors %}errors{% endif %}">
-                        {{ form.subscriber_last_name }}
-                        {{ form.subscriber_last_name.errors }}
+                    <div class="col-1-of-2 ">
+                        <input type="text" class="form-control form-control-lg input" placeholder="Last name" name="subscriber_last_name">                   
                     </div>
                 </div>
-                <br>
-                <div class="row {% if form.subscriber_email.errors %}errors{% endif %}">
-                    {{ form.subscriber_email }}
-                    {{ form.subscriber_email.errors }}
+                <div class="row ">
+                    <input type="email" class="form-control form-control-lg input" placeholder="jane@email.com" name="subscriber_email">
                 </div>
 
                 <!-- Submit Button -->

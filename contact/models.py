@@ -78,7 +78,7 @@ class Survey(models.Model):
     roadblocks_text                 =   models.CharField(max_length=255, blank=True)
     # Q8
     timeline                        =   models.CharField(max_length=50, choices=TIMELINE)
-    timeline_description            =   models.TextField(max_length=500)
+    timeline_text                   =   models.CharField(max_length=255, blank=True)
     # Q9
     subscriber_first_name           =   models.CharField(max_length=100)
     subscriber_last_name            =   models.CharField(max_length=100)

@@ -1,3 +1,4 @@
+from contact.models import Survey
 from fourfront_prelaunch.models import Survey
 from django.contrib import admin
 from .models import Survey
