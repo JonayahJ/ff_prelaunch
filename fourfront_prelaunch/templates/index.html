@@ -719,17 +719,21 @@
             <p class="subscribe__text-mini u-margin-bottom-medium">
                 We won’t spam your inbox.
             </p>
-            <div class="row subscribe__input">
-                <div class="input-group mb-3">
-                    <input type="email" 
-                    class="form-control" 
-                    placeholder="jane.doe@email.com" 
-                    aria-label="jane.doe@email.com" 
-                    aria-describedby="button"
-                    id="input">
-                    <button class="btn btn-outline-secondary" type="button" id="button">SUBMIT</button>
-                  </div>
-            </div>              
+            <form action="{% url 'email' %}" method="POST">
+                {% csrf_token %}
+                <div class="row subscribe__input">
+                    <div class="input-group mb-3">
+                        <input type="email" 
+                        class="form-control" 
+                        placeholder="jane.doe@email.com" 
+                        aria-label="jane.doe@email.com" 
+                        aria-describedby="button"
+                        name="signup_email"
+                        id="input">
+                        <button class="btn btn-outline-secondary" type="submit" id="button">SUBMIT</button>
+                    </div>
+                </div> 
+            </form>
         </section>
     </main> 
 {% endblock %}

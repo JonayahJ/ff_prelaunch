@@ -57,27 +57,27 @@ TIMELINE=[
 
 class Survey(models.Model):
     # Q1
-    tech_exp                        =   models.CharField(max_length=50, choices=YNO_CHOICES)
+    tech_exp                        =   models.CharField(max_length=50)
     tech_exp_text                   =   models.CharField(max_length=255, blank=True)
     # Q2
-    tech_founder                    =   models.CharField(max_length=50, choices=YNO_CHOICES)
+    tech_founder                    =   models.CharField(max_length=50)
     tech_founder_text               =   models.CharField(max_length=255, blank=True)
     # Q3
-    startup_stage                   =   models.CharField(max_length=50, choices=STARTUP)
+    startup_stage                   =   models.CharField(max_length=50)
     startup_stage_text              =   models.CharField(max_length=255, blank=True)
     # Q4
     startup_description             =   models.TextField(max_length=500)
     # Q5
-    access_freq                     =   models.CharField(max_length=50, choices=ACCESS_FREQ)
+    access_freq                     =   models.CharField(max_length=50)
     access_freq_text                =   models.CharField(max_length=255, blank=True)
     # Q6
-    tech_challenge                  =   models.CharField(max_length=50, choices=TECH_CHALLENGE)
+    tech_challenge                  =   models.CharField(max_length=50)
     tech_challenge_description      =   models.TextField(max_length=500)
     # Q7
-    roadblocks                      =   models.CharField(max_length=50, choices=ROADBLOCKS)
+    roadblocks                      =   models.CharField(max_length=50)
     roadblocks_text                 =   models.CharField(max_length=255, blank=True)
     # Q8
-    timeline                        =   models.CharField(max_length=50, choices=TIMELINE)
+    timeline                        =   models.CharField(max_length=50)
     timeline_text                   =   models.CharField(max_length=255, blank=True)
     # Q9
     subscriber_first_name           =   models.CharField(max_length=100)

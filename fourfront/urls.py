@@ -21,6 +21,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("fourfront_prelaunch.urls")),
     path("contact/", include("contact.urls")),
+    path("subscriber/", include("subscriber.urls")),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
